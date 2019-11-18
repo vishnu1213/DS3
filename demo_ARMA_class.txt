@@ -1,0 +1,69 @@
+#ARIMA
+
+. tsset date, weekly
+        time variable:  date, 1960w2 to 1980w21
+                delta:  1 week
+
+. ac  rbrazil
+
+. pac  rbrazil
+
+. by chceking ac and pac we get the order(1,1)
+
+. arima  rbrazil, arima(1,0,1)
+
+(setting optimization to BHHH)
+Iteration 0:   log likelihood = -2168.0489  
+Iteration 1:   log likelihood =  -2165.774  
+Iteration 2:   log likelihood = -2165.3565  
+Iteration 3:   log likelihood = -2165.3347  
+Iteration 4:   log likelihood = -2165.3325  
+(switching optimization to BFGS)
+Iteration 5:   log likelihood = -2165.3319  
+Iteration 6:   log likelihood = -2165.3317  
+Iteration 7:   log likelihood = -2165.3316  
+
+ARIMA regression
+
+Sample:  1960w2 - 1980w21                       Number of obs      =      1060
+                                                Wald chi2(2)       =    102.90
+Log likelihood = -2165.332                      Prob > chi2        =    0.0000
+
+------------------------------------------------------------------------------
+             |                 OPG
+     rbrazil |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+rbrazil      |
+       _cons |   .0963803   .0595151     1.62   0.105    -.0202673    .2130278
+-------------+----------------------------------------------------------------
+ARMA         |
+          ar |
+         L1. |  -.7428255   .1182547    -6.28   0.000    -.9746005   -.5110506
+             |
+          ma |
+         L1. |   .6795637   .1329199     5.11   0.000     .4190456    .9400819
+-------------+----------------------------------------------------------------
+      /sigma |   1.866048   .0244697    76.26   0.000     1.818088    1.914007
+------------------------------------------------------------------------------
+
+here the p-value is less than 0.05 therefore it is great check for estat predict res etc
+
+. estat ic
+
+-----------------------------------------------------------------------------
+       Model |    Obs    ll(null)   ll(model)     df          AIC         BIC
+-------------+---------------------------------------------------------------
+           . |   1060           .   -2165.332      4     4338.663    4358.527
+-----------------------------------------------------------------------------
+               Note:  N=Obs used in calculating BIC; see [R] BIC note
+
+. 
+
+
+ predict res,residual
+
+. pac res
+
+if no line crosses the grey phase then model is good
+
+choose one model do estat ic check the aic and bic agar lowest aya then do pac res to check whether inside the grey phase then it is best

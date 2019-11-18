@@ -1,0 +1,262 @@
+unit root
+
+. tsset weeks, weekly
+        time variable:  weeks, 1960w2 to 1980w21
+                delta:  1 week
+
+
+. dfuller  brazil
+
+Dickey-Fuller test for unit root                   Number of obs   =      1059
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(t)            -34.319            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+
+if test statistics is less than 1% critical value then it is stationery
+
+. dfuller  chile
+
+Dickey-Fuller test for unit root                   Number of obs   =      1059
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(t)            -32.554            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+. dfuller  colombia
+
+Dickey-Fuller test for unit root                   Number of obs   =      1059
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(t)            -31.546            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+. dfuller  costarica
+
+Dickey-Fuller test for unit root                   Number of obs   =      1059
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(t)            -33.739            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+. dfuller  peru
+
+Dickey-Fuller test for unit root                   Number of obs   =      1059
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(t)            -28.052            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+. dfuller  venenzula
+
+Dickey-Fuller test for unit root                   Number of obs   =      1059
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(t)            -32.337            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+. 
+if it is not stationery then type
+
+dfuller d. variable name
+
+if still not stationery then 
+dfuller d2. variable name
+
+another test is ppheron test
+
+. pperron brazil
+
+Phillips-Perron test for unit root                 Number of obs   =      1059
+                                                   Newey-West lags =         6
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(rho)        -1205.421           -20.700           -14.100           -11.300
+ Z(t)            -34.281            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+if z(t) is less than 1% critical value then that variable is stationery
+
+
+. pperron  chile
+
+Phillips-Perron test for unit root                 Number of obs   =      1059
+                                                   Newey-West lags =         6
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(rho)        -1019.886           -20.700           -14.100           -11.300
+ Z(t)            -32.580            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+. pperron   colombia
+
+Phillips-Perron test for unit root                 Number of obs   =      1059
+                                                   Newey-West lags =         6
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(rho)        -1196.557           -20.700           -14.100           -11.300
+ Z(t)            -31.988            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+. pperron   costarica
+
+Phillips-Perron test for unit root                 Number of obs   =      1059
+                                                   Newey-West lags =         6
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(rho)        -1201.507           -20.700           -14.100           -11.300
+ Z(t)            -33.765            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+. pperron   peru
+
+Phillips-Perron test for unit root                 Number of obs   =      1059
+                                                   Newey-West lags =         6
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(rho)         -995.969           -20.700           -14.100           -11.300
+ Z(t)            -28.485            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+. pperron   venenzula
+
+Phillips-Perron test for unit root                 Number of obs   =      1059
+                                                   Newey-West lags =         6
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(rho)        -1055.921           -20.700           -14.100           -11.300
+ Z(t)            -32.337            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+. 
+
+
+ADF-GLS test
+. dfgls  brazil
+ 
+DF-GLS for brazil                                        Number of obs =  1038
+Maxlag = 21 chosen by Schwert criterion
+ 
+               DF-GLS tau      1% Critical       5% Critical      10% Critical
+  [lags]     Test Statistic        Value             Value             Value
+------------------------------------------------------------------------------
+    21           -6.532           -3.480            -2.828            -2.543
+    20           -6.714           -3.480            -2.829            -2.544
+    19           -6.628           -3.480            -2.831            -2.545
+    18           -7.087           -3.480            -2.832            -2.547
+    17           -7.181           -3.480            -2.834            -2.548
+    16           -7.043           -3.480            -2.836            -2.550
+    15           -7.586           -3.480            -2.837            -2.551
+    14           -7.922           -3.480            -2.839            -2.552
+    13           -8.283           -3.480            -2.840            -2.554
+    12           -9.043           -3.480            -2.841            -2.555
+    11           -9.529           -3.480            -2.843            -2.556
+    10          -10.033           -3.480            -2.844            -2.557
+    9           -10.564           -3.480            -2.846            -2.559
+    8           -10.976           -3.480            -2.847            -2.560
+    7           -11.878           -3.480            -2.848            -2.561
+    6           -11.981           -3.480            -2.850            -2.562
+    5           -12.210           -3.480            -2.851            -2.564
+    4           -13.740           -3.480            -2.852            -2.565
+    3           -15.042           -3.480            -2.854            -2.566
+    2           -17.899           -3.480            -2.855            -2.567
+    1           -21.511           -3.480            -2.856            -2.568
+ 
+Opt Lag (Ng-Perron seq t) =  7 with RMSE  1.857269
+Min SC   =  1.259973 at lag  1 with RMSE  1.865065
+Min MAIC =  2.840571 at lag 16 with RMSE  1.852122
+
+1st lag par hi stationery as -21 is less than -3.480 therefore it is stationery
+
+####with lags then augmented dkfuller
+
+. dfuller  venenzula,lags(2)
+
+Augmented Dickey-Fuller test for unit root         Number of obs   =      1057
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(t)            -18.797            -3.430            -2.860            -2.570
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+#to check with trend or seasonality 
+
+. dfuller brazil, trend lags(0)
+
+Dickey-Fuller test for unit root                   Number of obs   =      1059
+
+                               ---------- Interpolated Dickey-Fuller ---------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(t)            -34.383            -3.960            -3.410            -3.120
+------------------------------------------------------------------------------
+MacKinnon approximate p-value for Z(t) = 0.0000
+
+. 
+with drift
+
+. dfuller brazil, drift lags(0)
+
+Dickey-Fuller test for unit root                   Number of obs   =      1059
+
+                               ----------- Z(t) has t-distribution -----------
+                  Test         1% Critical       5% Critical      10% Critical
+               Statistic           Value             Value             Value
+------------------------------------------------------------------------------
+ Z(t)            -34.319            -2.330            -1.646            -1.282
+------------------------------------------------------------------------------
+p-value for Z(t) = 0.0000
+
